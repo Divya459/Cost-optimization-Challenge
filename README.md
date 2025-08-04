@@ -30,7 +30,7 @@ Accessed only when needed, with latency in seconds
 
 🔄 Data Migration Strategy
 
- Below strategy can be used for automating the process of storing the records older than 3 months in Blob
+ Below strategy can be used **to automate the process** with out any**manual intervention** of storing the records older than 3 months in Blob
  
 ✅ **_Azure Data Factory_** (**Preferred for Simplicity**)
 
