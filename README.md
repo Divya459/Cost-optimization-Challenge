@@ -14,6 +14,7 @@ we have a serverless architecture in azure where one of tour services stores bil
 3. access latency :When an old record is required, it should still be served, with a response time in th eorder if seconds
 
 **Solutions can be considered:**
+
 Tiered Storage with Seamless Access
 🔹 Active Tier (Cosmos DB)
 Stores recent billing records (≤ 3 months)
@@ -43,4 +44,4 @@ If not found, queries Blob Storage
 Returns the result transparently
 This ensures no downtime, no data loss, and no disruption to consumers.
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7898bf33-f3d9-490d-8933-24e046df344f" />
+<img width="1200" height="900" alt="image" src="https://github.com/user-attachments/assets/7898bf33-f3d9-490d-8933-24e046df344f" />
