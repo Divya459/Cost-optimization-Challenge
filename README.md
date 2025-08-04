@@ -29,16 +29,46 @@ Stores older records (> 3 months) as JSON files
 Accessed only when needed, with latency in seconds
 
 🔄 Data Migration Strategy
-
+ Below strategy can be used for automating the process of storing the records older than 3 months in Blob
+ 
 ✅ **_Azure Data Factory_** (**Preferred for Simplicity**)
-Scheduled pipeline runs weekly
-Filters records older than 3 months
-Copies data to Blob Storage
+**Scheduled pipeline** runs weekly
+**Filters records older than 3 months**
+Copies data to **Blob Storage**
 Optionally deletes or flags records in Cosmos DB
 
+
+**Azure Data Factory** – **Step-by-Step Pipeline**
+🎯 Goal:
+Copy records older than 3 months from Cosmos DB to Azure Blob Storage.
+
+🛠️ Steps:
+**1. Create Linked Services**
+Cosmos DB: Use your account key or connection string.
+Azure Blob Storage: Use your storage account credentials.
+**2. Create Datasets**
+Source Dataset: Cosmos DB collection (Billing Records)
+Sink Dataset: Blob Storage (JSON or CSV format)
+**3. Create a Pipeline**
+Add a Lookup Activity (optional): To fetch the current date or parameters.
+Add a Filter Activity:
+Use a query like:
+
+**Add a Copy Data Activity:**
+Source: Cosmos DB dataset with the above query
+Sink: Blob Storage dataset
+Configure file naming with dynamic content (e.g., archive_@{utcnow()}.json)
+**4. Add a Trigger**
+Schedule the pipeline to run weekly or monthly.
+**5. Monitor**
+Use the Monitor tab to track pipeline runs and troubleshoot failures.
+
 ✅ **_Azure Function_** (**Optional for Custom Logic**)
-Can be used for real-time or event-driven migration
-Handles edge cases or custom transformations
+Can be used for **real-time or event-driven** migration
+Handles **edge cases or custom transformations**
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/bee3f24f-76a6-4502-9442-c164274b20e9" />
+
 
 🔍 Seamless Access Strategy
 To maintain API contracts:
