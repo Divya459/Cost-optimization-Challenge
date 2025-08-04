@@ -29,18 +29,26 @@ Stores older records (> 3 months) as JSON files
 Accessed only when needed, with latency in seconds
 
 🔄 Data Migration Strategy
+
  Below strategy can be used for automating the process of storing the records older than 3 months in Blob
  
 ✅ **_Azure Data Factory_** (**Preferred for Simplicity**)
+
 **Scheduled pipeline** runs weekly
+
 **Filters records older than 3 months**
+
 Copies data to **Blob Storage**
+
 Optionally deletes or flags records in Cosmos DB
 
 
 **Azure Data Factory** – **Step-by-Step Pipeline**
+
 🎯 Goal:
+
 Copy records older than 3 months from Cosmos DB to Azure Blob Storage.
+
 
 🛠️ Steps:
 
