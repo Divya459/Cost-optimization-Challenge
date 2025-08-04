@@ -24,19 +24,19 @@ Tiered Storage with Seamless Access
 Stores recent billing records (≤ 3 months)
 Continues to serve read/write APIs without any change
 
-🔹 Archive Tier (Azure Blob Storage or Data Lake)
+🔹 Archive Tier (**Azure Blob Storage or Data Lake**)
 Stores older records (> 3 months) as JSON files
 Accessed only when needed, with latency in seconds
 
 🔄 Data Migration Strategy
 
-✅ Azure Data Factory (Preferred for Simplicity)
+✅ Azure Data Factory (**Preferred for Simplicity**)
 Scheduled pipeline runs weekly
 Filters records older than 3 months
 Copies data to Blob Storage
 Optionally deletes or flags records in Cosmos DB
 
-✅ Azure Function (Optional for Custom Logic)
+✅ Azure Function (**Optional for Custom Logic**)
 Can be used for real-time or event-driven migration
 Handles edge cases or custom transformations
 
