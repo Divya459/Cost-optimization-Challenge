@@ -24,6 +24,7 @@ Stores older records (> 3 months) as JSON files
 Accessed only when needed, with latency in seconds
 
 🔄 Data Migration Strategy
+
 ✅ Azure Data Factory (Preferred for Simplicity)
 Scheduled pipeline runs weekly
 Filters records older than 3 months
@@ -44,4 +45,4 @@ If not found, queries Blob Storage
 Returns the result transparently
 This ensures no downtime, no data loss, and no disruption to consumers.
 
-<img width="1200" height="900" alt="image" src="https://github.com/user-attachments/assets/7898bf33-f3d9-490d-8933-24e046df344f" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/7898bf33-f3d9-490d-8933-24e046df344f" />
