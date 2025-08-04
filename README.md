@@ -64,9 +64,13 @@ Sink Dataset: Blob Storage (JSON or CSV format)
 
 **3. Create a Pipeline**
 
-Add a Lookup Activity (optional): To fetch the current date or parameters.
+Add a Lookup Activity (optional):  To fetch the current date or parameters.
+
 Add a Filter Activity:
+
 Use a query like:
+
+SELECT * FROM c WHERE c.timestamp < GetCurrentDate() - 90
 
 **Add a Copy Data Activity:**
 
